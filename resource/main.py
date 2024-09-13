@@ -94,7 +94,7 @@ def extract_values_and_units(key, value_list):
 
 
 
-base_url = "http://127.0.0.1:8000/api/v1/sparrow-ocr/inference"
+base_url = "http://127.0.0.1:8001/api/v1/sparrow-ocr/inference"
 headers = {
     'Content-Type': 'application/json'
     }
