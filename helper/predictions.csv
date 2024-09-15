@@ -3920,3 +3920,5 @@ index,entity_name,prediction,actual_entity_value,text
 3926,item_weight,,25 gram,"['25GM', 'SOLATE', 'PROTEIN', 'GOLD', 'MWHE', 'BM', 'MATRIX', 'BUILD & MAINTAIN LEAN MUSCLES']"
 3927,item_weight,2.5 kilogram,2.5 kilogram,"['Materials: Naturahrubber & PU', 'Dimensions: 6\'/180cm x 2\'2""/66cm & 0.16""/4mm thick', 'Multiple colours:', 'Weight:', '2.5 kg/5.5lb']"
 3928,voltage,120.0 volt,120.0 volt,"['PAR30', '120V 75W', '1PAR3W', '12AR3W', 'CE', '3', 'PAR30', '3', 'CES', 'CE']"
+index,prediction
+index,prediction

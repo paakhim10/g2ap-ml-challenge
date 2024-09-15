@@ -41,11 +41,13 @@ def sanity_check(test_filename, output_filename):
 if __name__ == "__main__":
     #Usage example: python sanity.py --test_filename sample_test.csv --output_filename sample_test_out.csv
     
-    parser = argparse.ArgumentParser(description="Run sanity check on a CSV file.")
-    parser.add_argument("--test_filename", type=str, required=True, help="The test CSV file name.")
-    parser.add_argument("--output_filename", type=str, required=True, help="The output CSV file name to check.")
-    args = parser.parse_args()
+    # parser = argparse.ArgumentParser(description="Run sanity check on a CSV file.")
+    # parser.add_argument("--test_filename", type=str, required=True, help="The test CSV file name.")
+    # parser.add_argument("--output_filename", type=str, required=True, help="The output CSV file name to check.")
+    # args = parser.parse_args()
+    test_file = "/Users/paakhim10/Desktop/gap-ml-challenge/helper/split/data1.csv"
+    output_file = "/Users/paakhim10/Desktop/gap-ml-challenge/helper/split/output/outputstest1.csv"
     try:
-        sanity_check(args.test_filename, args.output_filename)
+        sanity_check(test_file, output_file)
     except Exception as e:
         print('Error:', e)

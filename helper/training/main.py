@@ -21,7 +21,7 @@ def parse_csv_file(file_path):
     
     return data
 
-csv_file_path = './resource/dataset/train.csv'
+csv_file_path = '../datasplit1/outputstest.csv'
 parsed_data = parse_csv_file(csv_file_path)
 
 base_url = "http://127.0.0.1:8000/api/v1/sparrow-ocr/inference"
@@ -30,7 +30,7 @@ base_url = "http://127.0.0.1:8000/api/v1/sparrow-ocr/inference"
 counter = 0
 
 # Open the CSV file to append predictions
-with open('training_ocr_out.csv', mode='w', newline='') as file:
+with open('../datasplit1/predictions1.csv', mode='w', newline='') as file:
     writer = csv.writer(file)
     writer.writerow(['index', 'prediction'])
 

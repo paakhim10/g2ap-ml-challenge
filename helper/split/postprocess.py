@@ -3,7 +3,7 @@ import pandas as pd
 
 dataframes = {}
 
-for i in range(1, 1):
+for i in range(1, 4):
     data1 = pd.read_csv(f"./predictions{i}.csv")
     data2 = pd.read_csv(f"./data{i}.csv")
     
@@ -59,8 +59,8 @@ for i in range(1, 1):
         
         if match:
             value = match.group(1)
-            unit = normalize_unit(match.group(2))  # Normalize the unit here
-            return f"{value} {unit}"  # Return the extracted value with the standardized unit
+            unit = normalize_unit(match.group(2))
+            return f"{value} {unit}"
         else:
             return ""  # No match found, returning an empty string
 
