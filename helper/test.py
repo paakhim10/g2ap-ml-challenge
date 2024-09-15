@@ -13,17 +13,18 @@ def parse_csv_file(file_path):
         next(reader)
         
         for row in reader:
+            if row[1] == 'Error':
+                continue
             data.append({
                 "index": int(row[0]),
-                "url": row[1],
-                "value": int(row[2]),
-                "attribute": row[3]
+                "prediction_list": eval(row[1]),
+                "entity_name": row[2],
+                "entity_value": row[3]
             })
     
     return data
 
-csv_file_path = './dataset/sample_test.csv'
-
+csv_file_path = './training/train_ocr.csv'
 parsed_data = parse_csv_file(csv_file_path)
 
 unit_variations = {
@@ -92,32 +93,22 @@ def extract_values_and_units(key, value_list):
     return extracted_data
 
 
-ocr_out_file = open('ocr_out.csv', mode='r')
-ocr_out_reader = csv.reader(ocr_out_file)
-next(ocr_out_reader, None)
-
-
-file = open('predictions.csv', mode='a', newline='')
+file = open('predictions.csv', mode='w', newline='')
 writer = csv.writer(file)
-writer.writerow(['index', 'prediction'])
+writer.writerow(['index','entity_name', 'prediction', 'actual_entity_value', 'text'])
 
 start_time = time.time()
-
 print("Start time = ", start_time)
+
 for item in parsed_data:
-    url = item['url']
-    value = item['value']
-    attribute = item['attribute']
+    index = item['index']
+    prediction_list = item['prediction_list']
+    entity_name = item['entity_name']
+    actual_entity_value = item['entity_value']
 
-    payload = {
-        "image_url": url,
-    }
-    
-    # response = requests.request("POST", base_url, data=payload)
-    response = next(ocr_out_reader).split(',')
-    test_values = list(chain.from_iterable(eval(response[1]))) # flatten 2d list
+    # test_values = list(chain.from_iterable(prediction_list)) # flatten 2d list
 
-    x = extract_values_and_units(attribute, test_values)
+    x = extract_values_and_units(entity_name, prediction_list)
     
     out = ""
 
@@ -131,10 +122,9 @@ for item in parsed_data:
         else:
             out = '"[' + str(x[0][0]) + ", " + str(x[0][1]) + '] ' + x[1]+'"'
         
-    writer.writerow([item['index'], out])
+    writer.writerow([item['index'], entity_name, out, actual_entity_value, str(prediction_list)])
 
 file.close()
-ocr_out_file.close()
 
 end_time = time.time()
 print("End time = ", end_time)
