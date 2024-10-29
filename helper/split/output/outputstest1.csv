@@ -1,4 +1,4 @@
-index,extracted_value
+index,prediction
 0,6.68 centimetre
 1,200 centimetre
 2,42 centimetre
@@ -139,7 +139,7 @@ index,extracted_value
 137,18.5 centimetre
 138,25.65 centimetre
 139,100 metre
-140,11.5 millimetre
+140,11.5 metre
 141,14 centimetre
 142,33 inch
 143,82 inch
@@ -1091,7 +1091,7 @@ index,extracted_value
 1090,11 pound
 1091,29.5 centimetre
 1092,
-1093,6.0 millimetre
+1093,6.0 metre
 1094,12 fluid ounce
 1095,9 centimetre
 1096,9 centimetre
@@ -1748,7 +1748,7 @@ index,extracted_value
 1747,180 metre
 1748,180 metre
 1749,180 metre
-1750,35 millimetre
+1750,35 metre
 1751,114 metre
 1752,290 gram
 1753,
@@ -2848,7 +2848,7 @@ index,extracted_value
 2850,80 pound
 2851,72 gram
 2852,11 metre
-2853,5 millimetre
+2853,5 metre
 2854,
 2855,5.6 inch
 2856,
@@ -4399,7 +4399,7 @@ index,extracted_value
 4406,80 centimetre
 4407,160 centimetre
 4408,3.5 metre
-4409,3.5 millimetre
+4409,3.5 metre
 4410,2.87 inch
 4411,2.87 inch
 4412,103.5 centimetre
@@ -5264,7 +5264,7 @@ index,extracted_value
 5272,450 centimetre
 5273,450 centimetre
 5274,9.25 inch
-5275,116 millimetre
+5275,116 metre
 5276,
 5277,4 centimetre
 5278,

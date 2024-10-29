@@ -4,7 +4,7 @@ import pandas as pd
 dataframes = {}
 
 for i in range(1, 4):
-    data1 = pd.read_csv(f"./predictions{i}.csv")
+    data1 = pd.read_csv(f"./beginning/predictions{i}3.csv")
     data2 = pd.read_csv(f"./data{i}.csv")
     
     df = pd.merge(data1, data2, on=['index'])
@@ -105,8 +105,10 @@ for i in range(1, 4):
         return extracted_data
 
     # Apply the extraction function to each row
-    df['extracted_value'] = df.apply(lambda row: extract_value_with_unit(row['entity_name'], row['prediction']), axis=1)
+    df['prediction'] = df.apply(lambda row: extract_value_with_unit(row['entity_name'], str(row['prediction'])), axis=1)
+
+    # print(df['prediction'][1])
 
     # Filter DataFrame to only keep relevant columns and write to CSV
-    dataframes[i] = df[['index', 'extracted_value']]
-    dataframes[i].to_csv(f"./output/outputstest{i}.csv", index=False)
+    dataframes[i] = df[['index', 'prediction']]
+    dataframes[i].to_csv(f"./out/outputstest{i}.csv", index=False)

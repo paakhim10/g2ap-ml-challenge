@@ -34,10 +34,19 @@ def get_index_range(data):
 pred_files = [
     "./split/output/outputstest1.csv",
     "./split/output/outputstest2.csv",
-    "./split/output/outputstest3.csv"
+    "./split/output/outputstest3.csv",
+    "./split/output/outputstest12.csv",
+    "./split/output/outputstest22.csv",
+    "./split/output_final/outputstest1.csv",
+    "./split/output_final/outputstest2.csv",
+    "./split/output_final/outputstest3.csv",
+    "./split/out/outputstest3.csv",
+    "./split/out/outputstest1.csv",
+    "./split/out/outputstest2.csv",
+
 ]
 pred_data = [read_file(file) for file in pred_files]
-pre_output = read_file("./../submissions/output_3.csv")
+pre_output = read_file("./../submissions/updated_output_5.csv")
 
 # Create a dictionary to store updates
 updates = {}
@@ -64,6 +73,6 @@ for row in pre_output:
 print(f"Updated {updated_count} rows in pre_output")
 
 # Write the updated data back to a new file
-write_file('./../submissions/updated_output_3.csv', pre_output)
+write_file('./../submissions/output_final.csv', pre_output)
 
-print("Dataset merging complete. Updated output saved as './../submissions/updated_output_3.csv'.")
+print("Dataset merging complete. Updated output saved as './../submissions/output_final.csv'.")
